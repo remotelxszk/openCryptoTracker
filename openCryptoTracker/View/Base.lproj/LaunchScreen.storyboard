@@ -15,13 +15,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="B0g-oH-qnf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ms-DX-AD5">
                                 <rect key="frame" x="0.0" y="503" width="414" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="czH-gg-jkh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="openCryptoTrackerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="czH-gg-jkh">
                                 <rect key="frame" x="157" y="398" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="nwt-58-njM"/>
@@ -38,10 +41,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.32862702732776244" green="0.29561590961492157" blue="0.43282043147208127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="B0g-oH-qnf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="1Ui-BK-Fas"/>
+                            <constraint firstAttribute="bottom" secondItem="B0g-oH-qnf" secondAttribute="bottom" id="44z-qf-7Df"/>
                             <constraint firstItem="czH-gg-jkh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="GQR-lh-kIz"/>
                             <constraint firstItem="RD7-KW-sam" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kdk-Ut-ki8"/>
+                            <constraint firstAttribute="trailing" secondItem="B0g-oH-qnf" secondAttribute="trailing" id="SPN-fU-KIf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RD7-KW-sam" secondAttribute="trailing" id="TD7-3y-wxi"/>
                             <constraint firstItem="czH-gg-jkh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dLq-l0-uzj"/>
+                            <constraint firstItem="B0g-oH-qnf" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="k94-jb-2zN"/>
                             <constraint firstItem="0Ms-DX-AD5" firstAttribute="top" secondItem="czH-gg-jkh" secondAttribute="bottom" constant="5" id="qES-On-HFQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Ms-DX-AD5" secondAttribute="trailing" id="xyf-Cj-aCo"/>
                             <constraint firstItem="0Ms-DX-AD5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zRe-Dk-xop"/>
@@ -51,10 +58,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Bitcoin" width="720" height="720"/>
+        <image name="LoadingBackground" width="2160" height="3840"/>
+        <image name="openCryptoTrackerIcon" width="1080" height="1080"/>
     </resources>
 </document>
