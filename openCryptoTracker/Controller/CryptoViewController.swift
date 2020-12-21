@@ -29,6 +29,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cryptoValue.adjustsFontSizeToFitWidth = true
+        cryptoDailyDifference.adjustsFontSizeToFitWidth = true
+        
         cryptoBackend.delegate = self
         cryptoPicker.dataSource = self
         cryptoPicker.delegate = self
