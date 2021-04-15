@@ -15,4 +15,5 @@ struct CryptoData: Decodable {
     let image: String
     let symbol: String
     let id: String
+    let market_cap_rank: Int
 }

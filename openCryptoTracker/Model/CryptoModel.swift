@@ -15,6 +15,7 @@ struct CryptoModel {
     let imageURL: String
     let cryptoSymbol: String
     let id: String
+    let marketCapRank: Int
     
     var valueIsUp: Bool {
         if dailyPriceChange < 0{

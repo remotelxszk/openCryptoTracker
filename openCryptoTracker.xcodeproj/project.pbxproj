@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1D0771A284169F58AB21D8 /* Pods_openCryptoTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3486E6E4A0661D20355841DD /* Pods_openCryptoTracker.framework */; };
 		B4170E372588272E001590E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4170E362588272E001590E5 /* AppDelegate.swift */; };
 		B4170E392588272E001590E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4170E382588272E001590E5 /* SceneDelegate.swift */; };
 		B4170E3B2588272E001590E5 /* CryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4170E3A2588272E001590E5 /* CryptoViewController.swift */; };
@@ -14,11 +15,15 @@
 		B4170E4025882733001590E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4170E3F25882733001590E5 /* Assets.xcassets */; };
 		B4170E4325882733001590E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4170E4125882733001590E5 /* LaunchScreen.storyboard */; };
 		B4170E5225884765001590E5 /* CryptoBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4170E5125884765001590E5 /* CryptoBackend.swift */; };
+		B4472858261BCD0B00B82A4B /* ChartsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4472857261BCD0B00B82A4B /* ChartsModel.swift */; };
+		B447285B261BCD4200B82A4B /* ChartsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447285A261BCD4200B82A4B /* ChartsData.swift */; };
 		B4546984258A5046009957F8 /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4546983258A5046009957F8 /* CryptoModel.swift */; };
 		B4546987258A576A009957F8 /* CryptoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4546986258A576A009957F8 /* CryptoData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16DA2339D3626396EE90EB36 /* Pods-openCryptoTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openCryptoTracker.debug.xcconfig"; path = "Target Support Files/Pods-openCryptoTracker/Pods-openCryptoTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		3486E6E4A0661D20355841DD /* Pods_openCryptoTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_openCryptoTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4170E332588272E001590E5 /* openCryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openCryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4170E362588272E001590E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4170E382588272E001590E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,11 +33,14 @@
 		B4170E4225882733001590E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4170E4425882733001590E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4170E5125884765001590E5 /* CryptoBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoBackend.swift; sourceTree = "<group>"; };
+		B4472857261BCD0B00B82A4B /* ChartsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsModel.swift; sourceTree = "<group>"; };
+		B447285A261BCD4200B82A4B /* ChartsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsData.swift; sourceTree = "<group>"; };
+		B44C1B5A26289BB20098C1FB /* darkmodeimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = darkmodeimage.png; sourceTree = "<group>"; };
+		B44C1B5B26289BB20098C1FB /* lightmodeimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightmodeimage.png; sourceTree = "<group>"; };
 		B4546983258A5046009957F8 /* CryptoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
 		B4546986258A576A009957F8 /* CryptoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoData.swift; sourceTree = "<group>"; };
 		B47AD565258AEE47009BD9EF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B47AD568258AF919009BD9EF /* lightmodeimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightmodeimage.png; sourceTree = "<group>"; };
-		B47AD569258AF928009BD9EF /* darkmodeimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = darkmodeimage.png; sourceTree = "<group>"; };
+		C45B435E40C60E760B71C002 /* Pods-openCryptoTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openCryptoTracker.release.xcconfig"; path = "Target Support Files/Pods-openCryptoTracker/Pods-openCryptoTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,20 +48,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D1D0771A284169F58AB21D8 /* Pods_openCryptoTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F3348EC008B609F9A0AA6B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				16DA2339D3626396EE90EB36 /* Pods-openCryptoTracker.debug.xcconfig */,
+				C45B435E40C60E760B71C002 /* Pods-openCryptoTracker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B4170E2A2588272E001590E5 = {
 			isa = PBXGroup;
 			children = (
+				B44C1B5A26289BB20098C1FB /* darkmodeimage.png */,
+				B44C1B5B26289BB20098C1FB /* lightmodeimage.png */,
 				B47AD565258AEE47009BD9EF /* README.md */,
-				B47AD568258AF919009BD9EF /* lightmodeimage.png */,
-				B47AD569258AF928009BD9EF /* darkmodeimage.png */,
 				B4170E352588272E001590E5 /* openCryptoTracker */,
 				B4170E342588272E001590E5 /* Products */,
+				0F3348EC008B609F9A0AA6B2 /* Pods */,
+				BD2B6B6CA61320774F2AA2A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +105,8 @@
 				B4170E5125884765001590E5 /* CryptoBackend.swift */,
 				B4546983258A5046009957F8 /* CryptoModel.swift */,
 				B4546986258A576A009957F8 /* CryptoData.swift */,
+				B4472857261BCD0B00B82A4B /* ChartsModel.swift */,
+				B447285A261BCD4200B82A4B /* ChartsData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -106,6 +128,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		BD2B6B6CA61320774F2AA2A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3486E6E4A0661D20355841DD /* Pods_openCryptoTracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -113,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4170E4725882733001590E5 /* Build configuration list for PBXNativeTarget "openCryptoTracker" */;
 			buildPhases = (
+				6BC704AE3C63612769F40EAD /* [CP] Check Pods Manifest.lock */,
 				B4170E2F2588272E001590E5 /* Sources */,
 				B4170E302588272E001590E5 /* Frameworks */,
 				B4170E312588272E001590E5 /* Resources */,
+				6A8BD845C2D4B430A1C46F3D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,12 +203,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6A8BD845C2D4B430A1C46F3D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-openCryptoTracker/Pods-openCryptoTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-openCryptoTracker/Pods-openCryptoTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-openCryptoTracker/Pods-openCryptoTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BC704AE3C63612769F40EAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-openCryptoTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B4170E2F2588272E001590E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B4170E3B2588272E001590E5 /* CryptoViewController.swift in Sources */,
+				B4472858261BCD0B00B82A4B /* ChartsModel.swift in Sources */,
+				B447285B261BCD4200B82A4B /* ChartsData.swift in Sources */,
 				B4170E372588272E001590E5 /* AppDelegate.swift in Sources */,
 				B4546987258A576A009957F8 /* CryptoData.swift in Sources */,
 				B4170E392588272E001590E5 /* SceneDelegate.swift in Sources */,
@@ -325,6 +401,7 @@
 		};
 		B4170E4825882733001590E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16DA2339D3626396EE90EB36 /* Pods-openCryptoTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -344,6 +421,7 @@
 		};
 		B4170E4925882733001590E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C45B435E40C60E760B71C002 /* Pods-openCryptoTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
