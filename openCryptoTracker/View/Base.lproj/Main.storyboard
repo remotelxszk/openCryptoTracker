@@ -217,6 +217,7 @@
                         <outlet property="cryptoImage" destination="F2S-dW-Ef5" id="24b-Zp-eh4"/>
                         <outlet property="cryptoLabel" destination="inh-eU-Aff" id="3Rc-3O-aFR"/>
                         <outlet property="cryptoTableView" destination="p6j-6V-6yk" id="94b-V5-WlD"/>
+                        <outlet property="cryptoUISegmentedControl" destination="dpv-E9-rZQ" id="fKh-v2-6x1"/>
                         <outlet property="cryptoUpDown" destination="mjq-Il-PTG" id="bBj-Wg-t2K"/>
                         <outlet property="cryptoValue" destination="a9E-r0-rqQ" id="CyT-YO-Wkq"/>
                         <segue destination="Gzd-ZB-ttZ" kind="presentation" identifier="loadingSegue" animates="NO" modalPresentationStyle="fullScreen" id="WSg-ay-ws7"/>

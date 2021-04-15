@@ -17,6 +17,7 @@ class CryptoViewController: UIViewController {
     @IBOutlet weak var cryptoUpDown: UIImageView!
     @IBOutlet weak var cryptoDailyDifference: UILabel!
     @IBOutlet weak var cryptoATH: UILabel!
+    @IBOutlet weak var cryptoUISegmentedControl: UISegmentedControl!
     
     
     @IBOutlet weak var chartView: UIView!
@@ -36,8 +37,12 @@ class CryptoViewController: UIViewController {
     var currentCryptoCurrencyName = "Bitcoin"
     var currentCryptoCurrencyID = "bitcoin"
     var currentVSCurrency = "usd"
-    var currentVSCurrencySymbol = "$"
+    var lastCurrencyIndex = 0
+    var vsCurrencyDictionary = ["usd": "$", "eur": "€", "gbp": "£", "pln": "PLN", "unknown currency": "error"]
     var cryptoArray = ["Bitcoin", "Ethereum", "Litecoin", "Monero", "Chainlink", "Tether", "Dash", "Aave", "Ripple", "Dogecoin"]
+    
+    // Create UserDefaults
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +68,12 @@ class CryptoViewController: UIViewController {
         cryptoTableView.dataSource = self
         cryptoTableView.delegate = self
         
+        // Open defaults if they exist
+        if let lastVSCurrencyIndex = defaults.value(forKey: "lastVSCurrencyIndex") as? Int {
+            lastCurrencyIndex = lastVSCurrencyIndex
+            currentVSCurrency = (cryptoUISegmentedControl.titleForSegment(at: lastCurrencyIndex)!).lowercased()
+            cryptoUISegmentedControl.selectedSegmentIndex = lastCurrencyIndex
+        }
 //        Download values from API and refresh UI
         cryptoBackend.getURLValue(vsCurrency: currentVSCurrency)
         cryptoBackend.getURLValueCharts(vsCurrency: currentVSCurrency, cryptoCurrency: currentCryptoCurrencyID)
@@ -86,7 +97,6 @@ class CryptoViewController: UIViewController {
 //            Refresh TableView
             let indexPath = self.cryptoTableView.indexPathForSelectedRow ?? IndexPath(row: 0, section: 0)
             self.cryptoTableView.scrollToRow(at: indexPath, at: .middle, animated: true)
-            
             self.cryptoTableView.reloadData()
             
 //            Highlight empty value on the chartView
@@ -100,8 +110,8 @@ class CryptoViewController: UIViewController {
                     if let imageURL = URL(string: (currentCrypto.imageURL)) {
                         self.cryptoImage.load(imageURL)
                     }
-                    self.cryptoValue.text = "\(currentCrypto.currentPrice) \(self.currentVSCurrencySymbol)"
-                    self.cryptoATH.text = "All Time High: \(currentCrypto.aTH) \(self.currentVSCurrencySymbol)"
+                    self.cryptoValue.text = "\(currentCrypto.currentPrice) \(self.vsCurrencyDictionary[self.currentVSCurrency] ?? "$")"
+                    self.cryptoATH.text = "All Time High: \(currentCrypto.aTH) \(self.vsCurrencyDictionary[self.currentVSCurrency] ?? "$")"
                     let dailyPriceChangeString = "\(currentCrypto.dailyPriceChange)"
                     if currentCrypto.valueIsUp { // if cryptocurrency is up
                             self.cryptoUpDown.image = UIImage(systemName: "arrow.up.circle.fill")
@@ -141,7 +151,7 @@ extension CryptoViewController: UITableViewDataSource, UITableViewDelegate {
         
 //        Set TableViewCell.text for CryptoCurrency Name and Symbol
         cell.textLabel?.text = "\(self.crypto![self.cryptoArray[indexPath[1]]]?.marketCapRank ?? 404). \(self.cryptoArray[indexPath[1]]) (\(self.crypto![self.cryptoArray[indexPath[1]]]?.cryptoSymbol ?? "404"))"
-        cell.detailTextLabel?.text = "\(self.crypto![self.cryptoArray[indexPath[1]]]?.currentPrice ?? 0) \(currentVSCurrencySymbol)"
+        cell.detailTextLabel?.text = "\(self.crypto![self.cryptoArray[indexPath[1]]]?.currentPrice ?? 0) \(self.vsCurrencyDictionary[self.currentVSCurrency] ?? "$")"
         cell.backgroundColor = UIColor.clear
         
         return cell
@@ -164,20 +174,20 @@ extension CryptoViewController {
         switch sender.selectedSegmentIndex {
                 case 0:
                     currentVSCurrency = "usd"
-                    currentVSCurrencySymbol = "$"
                 case 1:
                     currentVSCurrency = "eur"
-                    currentVSCurrencySymbol = "€"
                 case 2:
                     currentVSCurrency = "gbp"
-                    currentVSCurrencySymbol = "£"
                 case 3:
                     currentVSCurrency = "pln"
-                    currentVSCurrencySymbol = "PLN"
                 default:
                     currentVSCurrency = "unknown currency"
-                    currentVSCurrencySymbol = "error"
                 }
+        
+//        Update defaults
+        self.lastCurrencyIndex = sender.selectedSegmentIndex
+        self.defaults.setValue(self.lastCurrencyIndex, forKey: "lastVSCurrencyIndex")
+        
 //        Download data for this vsCurrency
         cryptoBackend.getURLValue(vsCurrency: currentVSCurrency)
         
@@ -201,7 +211,7 @@ extension CryptoViewController: CryptoBackendDelegate, ChartViewDelegate {
             for dailyValue in charts {
                 priceChartDataSet.append(ChartDataEntry(x: dailyValue.date, y: dailyValue.price))
             }
-            let pricesSet = LineChartDataSet(entries: priceChartDataSet, label: "Monthly price")
+            let pricesSet = LineChartDataSet(entries: priceChartDataSet, label: "Monthly price for \(self.crypto![self.currentCryptoCurrencyName]?.cryptoSymbol ?? "404") in \(self.vsCurrencyDictionary[self.currentVSCurrency] ?? "$")")
             
 //            Hide circles on each point
             pricesSet.drawCirclesEnabled = false
@@ -219,7 +229,7 @@ extension CryptoViewController: CryptoBackendDelegate, ChartViewDelegate {
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        self.cryptoValue.text = "\(String(format: "%.3f", highlight.y)) \(currentVSCurrencySymbol)"
+        self.cryptoValue.text = "\(String(format: "%.3f", highlight.y)) \(self.vsCurrencyDictionary[self.currentVSCurrency] ?? "$")"
     }
     
     func updateCryptoLabel(_ highlight: Double) {
